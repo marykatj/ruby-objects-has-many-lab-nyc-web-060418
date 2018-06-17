@@ -1,6 +1,5 @@
 class Song
-
-  attr_reader :name, :artist
+  attr_accessor :name, :artist
 
   @@all = []
 
@@ -13,11 +12,14 @@ class Song
     @@all
   end
 
-  def artist
-    Artist.all.select do |artist|
-      artist.name == self
+  def artist_name
+    if self.artist
+      self.artist.name
+    else
+      nil
     end
   end
+end
 
 
   def artist_name
