@@ -1,17 +1,32 @@
 class Song
 
-  attr_reader :artist, :song
+  attr_reader :name, :artist
 
-  @@songs = []
+  @@all = []
 
-  def initialize(song, artist)
-    @song = song
-    @artist = artist
-    @@songs << self
+  def initialize(name)
+    @name = name
+    @@all << self
   end
 
   def self.all
-    @@songs
+    @@all
+  end
+
+  def artist
+    Artist.all.select do |artist|
+      artist.name == self
+    end
+  end
+
+
+  def artist_name
+
+    if self.artist
+      self.artist.name
+    else
+      nil
+    end
   end
 
 end
