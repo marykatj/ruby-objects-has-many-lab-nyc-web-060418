@@ -18,8 +18,7 @@ class Song
     else
       nil
     end
-  end
-end
+  end 
 
 
   def artist_name
@@ -31,3 +30,4 @@ end
     end
   end
 
+end
